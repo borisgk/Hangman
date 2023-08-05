@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Score from './components/Score';
+import Solution from './components/Solution';
+import Letters from './components/Letters';
 
-function App() {
+
+
+const App = function() {
+
+  const [appData, setAppData] = useState({
+    score: 100,
+    solution: ["_", "_", "_", "_"],
+    hint: "What you consider most appropriate at all times.",
+    letters: ["a", "b", "c", "d", "e", "f"]
+  })
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hangman by Boris Kimel</h1>
+      <Score score={appData.score} />
+      <Solution solution={appData.solution} hint={appData.hint} />
+      <Letters letters={appData.letters} />
     </div>
   );
 }
