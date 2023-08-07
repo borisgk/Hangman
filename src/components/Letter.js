@@ -2,11 +2,16 @@ import React from "react"
 
 function Letter(props) {
     return (
-        props.available ? 
-            <button className="letter" onClick={() => props.check(props.letter)}>{props.letter}</button>
+        props.disabled ? 
+            <div className="letter letter-disabled" disabled>{props.letter}</div>
         :
-            <button className="letter letter-disabled" disabled>{props.letter}</button>
+            <div className="letter" onClick={() => letterSelected(props.letter)}>{props.letter}</div>
     )
-}
+
+    function letterSelected(letter) {
+        props.check(letter)
+    }
+
+}  
 
 export default Letter

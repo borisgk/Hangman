@@ -2,54 +2,83 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .solution {
-  font-size: 4em;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: darkred;
 }
 
-.letter {
-  font-style: normal;
-  font-variant-caps: normal;
-  font-size: 2rem;
-  width: 3rem;
-  height: 3rem;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.solution > .letter {
+  margin-right: 0.25em;
+}
+
+.letters {
   text-transform: uppercase;
-  /* text-decoration: line-through; */
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.letters-heading {
+  margin-top: 2rem;
 }
 
 .hint {
   color: grey;
 }
 
-.letter-disabled {
+.letter {
+  display: inline-block; 
+}
+
+.letters > .letter {
+  border: 1px solid grey;
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.letters > .letter-disabled {
   color: darkgrey;
+}
+
+.score {
+  border: 1px solid grey;
+  border-radius: 0.3rem;
+  width: fit-content;
+  margin: auto;
+  padding: 1rem;
+}
+
+.high-score {
+  background-color: lightgreen;
+}
+
+.medium-score {
+  background-color: lightyellow;
+}
+
+.low-score {
+  background-color: lightcoral;
+}
+
+.congrats {
+  margin-top: 2rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: red;
+}
+
+.failure {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: darkviolet;
+}
+
+.restart {
+  margin-top: 2rem;
+  font-size: 2rem;
 }

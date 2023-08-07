@@ -5,8 +5,9 @@ function Letters(props) {
 
     return (
         <div>
-            <p>Available letters:</p>
-            <p>{props.letters.map(l => <Letter letter={l.symbol} available={l.available} check={props.check}/>)}</p>
+            <div className="letters-heading">Letters:</div>
+            <div className="letters">{Object.entries(props.letters).map(([key, value]) => <Letter letter={key} disabled={value} check={props.check} />)}</div>
+            
         </div>
     )
 
